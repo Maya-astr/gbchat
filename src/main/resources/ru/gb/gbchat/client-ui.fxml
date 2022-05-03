@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<VBox fx:controller="ru.gb.gbchat2.client.Controller" xmlns:fx="http://javafx.com/fxml" spacing="5">
+    <HBox fx:id="loginBox" spacing="5" VBox.vgrow="ALWAYS">
+        <TextField fx:id="loginField" promptText="Login"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+        <Button text="Auth" defaultButton="true" onAction="#btnAuthClick"/>
+    </HBox>
+    <HBox fx:id="messageBox" visible="false" spacing="5">
+        <VBox spacing="5">
+            <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" editable="false"/>
+            <HBox>
+                <TextField fx:id="textField" HBox.hgrow="ALWAYS"/>
+                <Button text="Send" defaultButton="true" onAction="#btnSendClick"/>
+            </HBox>
+        </VBox>
+        <ListView fx:id="clientList" minWidth="200" maxWidth="200" onMouseClicked="#selectClient"/>
+    </HBox>
+</VBox>
